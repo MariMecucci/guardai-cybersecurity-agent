@@ -1,0 +1,23 @@
+name: GuardAI Python validation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  python-tests:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run isolated SQL demonstration
+        run: python agent/app.py
+      - name: Run automated tests
+        run: python -m unittest discover -s tests -v
