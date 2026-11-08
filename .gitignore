@@ -1,0 +1,22 @@
+# Arquivos locais do harness (DIO Agent)
+.claude/settings.local.json
+.antigravity/
+*.local
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Python e artefatos locais
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.sqlite3
+*.db
+
+# Logs e temporários
+*.log
+.tmp/
+.env
